@@ -1,5 +1,5 @@
 # Build stage
-FROM node:16-alpine3.12 as builder
+FROM node:17-alpine3.14 as builder
 
 LABEL maintainer="ever@ever.co"
 
@@ -25,7 +25,7 @@ RUN dos2unix bin/* && chmod +x bin/*.sh
 RUN bin/build.sh
 
 # Runtime stage
-FROM node:16-alpine3.12
+FROM node:17-alpine3.14
 
 WORKDIR /opt/traduora
 
